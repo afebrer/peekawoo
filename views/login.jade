@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    body.container.index-bg
+        .head.peekawoo-logo
+            .container
+                form.form-login(method='get', action='/subscribe2', id='subscribe')
+                    .index-form
+                        .index-form-container
+                            br
+                            h1.text-signin Sign In
+                            p.text-signin2 Meet local singles on the world's first online speed dating site
+                            br
+                            a.sb-facebook(href="/authfb")
+                            p.text-signin2 or
+                            a.sb-twitter(href="/authtw")
+                            br
+                            hr.hr-line
+                            p.text-email Want to be the first to try out our app?
+                                input.email(type="email", name="inputBox", placeholder="Enter your email here",required='required') 
+                            button.subscribe-button(type='submit',name='input.email')
+        script(type='text/javascript')
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-43851834-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        
