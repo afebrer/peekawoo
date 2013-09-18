@@ -7,8 +7,8 @@ block content
                 p#codename
         .ranking-container
             .ranking-selection-box
-                h1#selection-title Woos
-                p#selection-para People who likes you back
+                h1#selection-title People who like you
+                br
                 .hr2
                 .ranking-selection-list
                     .ranking-left
@@ -36,8 +36,8 @@ block content
                         input.email.ranking-email(type="email", name="inputBox", placeholder="Enter your email here", required='required')
                     button.subscribe-button2(type='submit',name='input.email')     
                     a.text-skipfornow2(href='/login') skip for now
-                    <a href="http://srvy.it/16dACKY" target="_blank">Feedback link http://srvy.it/16dACKY!</a>
-
+                    br
+                    a.btn.btn-primary(href='http://srvy.it/16dACKY') For feedback
         script
             $('#submit_rating').click(function(){
                 var userme = $('#user1').val();
@@ -48,3 +48,13 @@ block content
                     document.location.href='/authtw';
                 }
             });
+            $(document).unbind('keydown').bind('keydown', function (event) {
+                if (event.keyCode === 8 || event.keyCode === 116 || event.keyCode === 115) {
+                    event.preventDefault();
+                }
+            });
+            
+        script
+            window.location.hash="no-back-button";
+            window.location.hash="Again-no-back-button";//for google chrome
+            window.onhashchange=function(){window.location.hash="no-back-button";}
